@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid rgb(146, 148, 248);
+  transition: all 0.3s ease;
+  padding: 15px 72px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.btn:hover {
+  box-shadow: 1px 1px 25px 5px rgba(146, 148, 248, 0.4);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4) , transparent);
+  transition: all 0.9s ease;   
+}
+.btn:hover::before {
+  left: 100%;
+}
+
+.dashboard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.show-btn {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: margin-bottom 0.5s ease;
+}
+
+.tables-container {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.8s ease;
+  display: flex;
+}
+
+.tables-container.expand {
+  max-height: 2000px; /* big enough for the content */
+  opacity: 1;
+  margin-top: 8rem;
+}
+
+.entry {
+  background: #111;
+  margin: 1rem auto;
+  padding: 2rem;
+  padding-right: 0;
+  border-radius: 10px;
+  width: 80%;
+  text-align: left;
+  color: white;
+}
+
+.actions {
+  margin-top: 0.5rem;
+}
+
+.actions button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  .section {
+    flex: 1; 
+    margin: 0 1rem;
+  }
+  .edit-form {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    height: 400px;
+  }
+  
+  .edit-form h3 {
+    color: #ccc;
+    text-align: right;
+    margin-bottom: 40px;
+  }
+  
+  .edit-form div {
+    margin-bottom: 25px;
+  }
+  
+  .edit-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: antiquewhite;
+  }
+  
+  .edit-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .edit-form input:disabled {
+    background-color: #555;
+  }
+  
+  .edit-form .actions {
+    text-align: center;
+  }
+  
+  .edit-form .actions button {
+    margin-top: 10px;
+    width: 48%;
+  }
+  
+  .edit-form .actions button:last-child {
+    background-color: rgb(226, 60, 60);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .edit-form .actions button:last-child:hover {
+    background-color: darkred;
+  }
+  
