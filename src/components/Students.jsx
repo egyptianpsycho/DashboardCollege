@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
-import Header from "./header";
+import Header from "./Header";
 const Students = () => {
   const [students, setStudents] = useState([]);
   const [showTables, setShowTables] = useState(false);
