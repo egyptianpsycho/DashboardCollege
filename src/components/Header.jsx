@@ -1,6 +1,18 @@
 import React from "react";
+import ScrollReveal from "scrollreveal";
 import { Link } from "react-router-dom";
+import {useEffect} from "react";
 const Header = () => {
+  useEffect(() => {
+    ScrollReveal().reveal('header', {
+      origin: 'top',
+      distance: '60px',
+      duration: 1000,
+      delay: 100,
+      easing: 'ease-in-out',
+      reset: false, 
+    });
+  }, []);
   return (
     <header className="bg-white dark:bg-gray-900 mt-2">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">

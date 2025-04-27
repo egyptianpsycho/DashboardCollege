@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import Swal from "sweetalert2";
+import ScrollReveal from "scrollreveal";
 
 const Dashboard = () => {
   const [showTables, setShowTables] = useState(false);
@@ -30,6 +31,24 @@ const Dashboard = () => {
       setDoctors(doctorsData.doctors);
     };
     fetchData();
+    const sr = ScrollReveal();
+
+    sr.reveal(".admin-dashboard-title", {
+      origin: "bottom",
+      distance: "100px",
+      delay: 100,
+      duration: 1000,
+      easing: "ease-in-out",
+      reset: false,
+    });
+    sr.reveal(".rvlbtn", {
+      origin: "left",
+      distance: "500px",
+      delay: 100,
+      duration: 1000,
+      easing: "ease-in-out",
+      reset: false,
+    });
   }, []);
 
   const handleEdit = async () => {
@@ -139,17 +158,19 @@ const Dashboard = () => {
     <div className="dashboard">
       <section>
         <div className="flex flex-col items-center py-32 justify-center mt-10">
-          <h1 className="text-6xl font-bold text-amber-50 ">
+          <h1 className="text-6xl font-bold text-amber-50 admin-dashboard-title ">
             <span className="text-7xl text-red-300">Admin</span>Dashboard
           </h1>
         </div>
       </section>
-      <Button
-        className="btn mt-10 text-3xl text-center "
-        onClick={handleShowTables}
-      >
-        Show All Tables
-      </Button>
+      <div className="rvlbtn">
+        <Button
+          className="btn mt-10 text-3xl text-center "
+          onClick={handleShowTables}
+        >
+          Show All Tables
+        </Button>
+      </div>
       <div className={`tables-container ${showTables ? "expand" : ""}`}>
         <div className="section std">
           <h2 className="text-amber-50 text-left ml-20 text-xl">Students</h2>
