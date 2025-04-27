@@ -82,6 +82,8 @@ const Dashboard = () => {
             )
           );
         }
+        setEditingName("");
+        setNewName("");
       } else {
         console.error("Failed to update");
       }

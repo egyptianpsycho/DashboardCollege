@@ -14,9 +14,9 @@ const Header = () => {
     });
   }, []);
   return (
-    <header className="bg-white dark:bg-gray-900 mt-2">
-      <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
+    <header className="bg-white dark:bg-gray-900 overflow-hidden">
+      <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8 mt-2">
+        <div className="flex items-center gap-3 ">
           <Link
             to={"/home"}
             className="block text-teal-600 dark:text-teal-300"
