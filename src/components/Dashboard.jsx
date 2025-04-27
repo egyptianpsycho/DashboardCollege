@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@material-tailwind/react";
 import Swal from "sweetalert2";
 import ScrollReveal from "scrollreveal";
@@ -11,13 +10,14 @@ const Dashboard = () => {
   const [editingName, setEditingName] = useState("");
   const [newName, setNewName] = useState("");
   const [editingType, setEditingType] = useState("");
-  const [message, setmessage] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleShowTables = () => {
     setShowTables(!showTables);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchData = async () => {
+    try {
       const studentsResponse = await fetch(
         "https://student-doctor-management-api-production.up.railway.app/students"
       );
@@ -29,8 +29,13 @@ const Dashboard = () => {
       );
       const doctorsData = await doctorsResponse.json();
       setDoctors(doctorsData.doctors);
-    };
-    fetchData();
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData(); 
     const sr = ScrollReveal();
 
     sr.reveal(".admin-dashboard-title", {
@@ -49,7 +54,7 @@ const Dashboard = () => {
       easing: "ease-in-out",
       reset: false,
     });
-  }, []);
+  }, []); 
 
   const handleEdit = async () => {
     try {
@@ -62,9 +67,9 @@ const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data.message);
+        setMessage(data.message);
 
-        setmessage(data.message);
-
+        
         if (editingType === "students") {
           setStudents((prevStudents) =>
             prevStudents.map((student) =>
@@ -82,8 +87,12 @@ const Dashboard = () => {
             )
           );
         }
+
         setEditingName("");
         setNewName("");
+
+        
+        fetchData();
       } else {
         console.error("Failed to update");
       }
@@ -136,6 +145,8 @@ const Dashboard = () => {
               text: `${type.slice(0, -1)} has been deleted.`,
               icon: "success",
             });
+
+            fetchData();
           } else {
             console.error("Failed to delete");
             Swal.fire({
