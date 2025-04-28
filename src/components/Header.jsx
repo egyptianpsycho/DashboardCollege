@@ -14,12 +14,12 @@ const Header = () => {
     });
   }, []);
   return (
-    <header className="bg-white dark:bg-gray-900 overflow-hidden">
+    <header className="bg-gray-900 overflow-hidden">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8 mt-2">
         <div className="flex items-center gap-3 ">
           <Link
             to={"/home"}
-            className="block text-teal-600 dark:text-teal-300"
+            className="block text-teal-300"
             href="#"
           >
             <span className="sr-only">Home</span>
@@ -43,14 +43,14 @@ const Header = () => {
           <div className="hidden sm:flex sm:gap-4">
             <Link
               to={"/students"}
-              className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium transition duration-500  sm:block bg-gray-800 text-amber-50 hover:text-black hover:bg-indigo-300 ease-in-out "
+              className="hidden rounded-md px-5 py-2.5 text-sm font-medium transition duration-500  sm:block bg-gray-800 text-amber-50 hover:text-black hover:bg-indigo-300 ease-in-out "
               href="#"
             >
               Students
             </Link>
             <Link
               to={"/doctors"}
-              className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium transition duration-500  sm:block bg-gray-800 text-amber-50 hover:text-black hover:bg-indigo-300 ease-in-out "
+              className="hidden rounded-md  px-5 py-2.5 text-sm font-medium transition duration-500  sm:block bg-gray-800 text-amber-50 hover:text-black hover:bg-indigo-300 ease-in-out "
               href="#"
             >
               Doctors
@@ -58,13 +58,13 @@ const Header = () => {
           </div>
 
           <Link to={"/home"}
-            className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+            className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition duration-500 ease-in-out hover:bg-teal-500"
             href="#"
           >
             Home
           </Link>
 
-          <button className="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
+          <button className="block rounded-sm  p-2.5  transition  md:hidden bg-gray-800 text-white hover:text-white/75">
             <span className="sr-only">Toggle menu</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

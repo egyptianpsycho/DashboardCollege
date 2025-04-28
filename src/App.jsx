@@ -5,7 +5,7 @@ import Students from "./components/Students";
 import Doctors from "./components/Doctors";
 const App = () => {
   return (
-    <section className="dark:bg-gray-900 ">
+    <section className="bg-gray-900  ">
       <div className="min-h-screen container mx-auto">
         <BrowserRouter>
           <Routes>
